@@ -1,73 +1,85 @@
-import { useState } from 'react';
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
-import { Layout, Flex, Button } from 'antd';
-import Project from './components/Project';
-const { Header, Footer, Sider, Content } = Layout;
-
-const footerStyle = {
-  textAlign: 'center',
-  color: '#fff',
-  backgroundColor: '#4096ff',
-};
-
-const layoutStyle = {
-  borderRadius: 0,
-  overflow: 'hidden',
-  height: 1000,
-};
-
-const sliderStyle = {
-  lineHeight: '200%',
-  color: '#fff',
-  backgroundColor: '#264653',
-};
-
-const headerStyle = {
-  backgroundColor: '#BD4089',
-  textAlign: 'center',
-  align: 'center',
-  height: '10%',
-};
-
-const flexStyle = {
-  textAlign: 'center',
-  align: 'center',
-  height: '100%',
-};
-
-const contentStyle = {
-  backgroundColor: '#CFD2B2',
-};
-
-function App() {
+import Home from "./pages/Home";
+import Test from "./pages/Test";
+export default function App() {
   return (
     <div>
-      <Layout>
-        <Sider style={sliderStyle}>Sider</Sider>
-        <Layout style={layoutStyle}>
-          <Header style={headerStyle}>
-            <Flex style={flexStyle} align="center" justify="space-around">
-              <Button type="default">About me</Button>
-              <Button type="default">Projects</Button>
-              <Button type="default">Experience</Button>
-              <Button type="default">Contact</Button>
-              <Button type="primary">Resume</Button>
-            </Flex>
-          </Header>
+      
 
-          <Content style={contentStyle}>
-            <Project
-              name="42sh"
-              image="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            >
-              42SH is a cool Project
-            </Project>
-          </Content>
-          <Footer style={footerStyle}>Footer</Footer>
-        </Layout>
-      </Layout>
+      {/* Routes nest inside one another. Nested route paths build upon
+            parent route paths, and nested route elements render inside
+            parent route elements. See the note about <Outlet> below. */}
+      <Routes>
+        <Route path="/" element={<Home />}/>
+          <Route path="test" element={<Test />} />
+
+          {/* Using path="*"" means "match anything", so this route
+                acts like a catch-all for URLs that we don't have explicit
+                routes for. */}
+          <Route path="*" element={<NoMatch />} />
+      </Routes>
     </div>
   );
 }
 
-export default App;
+function Layout() {
+  return (
+    <div>
+      {/* A "layout route" is a good place to put markup you want to
+          share across all the pages on your site, like navigation. */}
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/nothing-here">Nothing Here</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <hr />
+
+      {/* An <Outlet> renders whatever child route is currently active,
+          so you can think about this <Outlet> as a placeholder for
+          the child routes we defined above. */}
+      <Outlet />
+    </div>
+  );
+}
+
+
+
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Dashboard() {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+    </div>
+  );
+}
+
+function NoMatch() {
+  return (
+    <div>
+      <h2>Nothing to see here!</h2>
+      <p>
+        <Link to="/">Go to the home page</Link>
+      </p>
+    </div>
+  );
+}
