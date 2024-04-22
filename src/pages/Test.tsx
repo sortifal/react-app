@@ -1,23 +1,19 @@
+import { useEffect, useState } from 'react';
 
-import { Divider } from "antd";
-import { useEffect } from "react";
-import Typewriter from "../components/TypeWriter";
-
-function Test(){
-
-    
-
-    return (
+import Typewriter2 from '../components/TypeWriter2';
+import Typewriter from '../components/TypeWriter';
+function Test() {
+  return (
     <>
-    <div>
-       Welcome to <Typewriter text='Robotics and Coding' delay={150} /> 
-    </div>
-    <div>
-        Here is <Typewriter text='another typewrite but going faster' delay={75}/>
-    
-    </div>    </>
-    );
+      <div className="title">
+        Hello, I'm{' '}
+        <Typewriter2
+          textList={['a developer', 'gamer', 'IT student', 'web designer']}
+          delay={150}
+        />
+      </div>
+    </>
+  );
 }
 
 export default Test;
-

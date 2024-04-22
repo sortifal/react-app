@@ -1,23 +1,22 @@
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link } from 'react-router-dom';
 
-import Home from "./pages/Home";
-import Test from "./pages/Test";
+import Home from './pages/Home';
+import Test from './pages/Test';
+import Parallax from './pages/Parallax';
 export default function App() {
   return (
     <div>
-      
-
       {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
-        <Route path="/" element={<Home />}/>
-          <Route path="test" element={<Test />} />
-
-          {/* Using path="*"" means "match anything", so this route
+        <Route path="/" element={<Home />} />
+        <Route path="test" element={<Test />} />
+        <Route path="parallax" element={<Parallax />} />
+        {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
-          <Route path="*" element={<NoMatch />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
   );
@@ -42,6 +41,9 @@ function Layout() {
           <li>
             <Link to="/nothing-here">Nothing Here</Link>
           </li>
+          <li>
+            <Link to="/parallax">Parallax</Link>
+          </li>
         </ul>
       </nav>
 
@@ -51,24 +53,6 @@ function Layout() {
           so you can think about this <Outlet> as a placeholder for
           the child routes we defined above. */}
       <Outlet />
-    </div>
-  );
-}
-
-
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
     </div>
   );
 }

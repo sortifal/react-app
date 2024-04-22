@@ -1,4 +1,3 @@
-
 import { Layout, Flex, Button } from 'antd';
 import Project from '../components/Project';
 const { Header, Footer, Sider, Content } = Layout;
@@ -42,7 +41,9 @@ function Home() {
   return (
     <div>
       <Layout>
-        <Sider style={sliderStyle}>Sider</Sider>
+        <Sider style={sliderStyle} className="title">
+          Sider
+        </Sider>
         <Layout style={layoutStyle}>
           <Header style={headerStyle}>
             <Flex style={flexStyle} align="center" justify="space-around">
@@ -55,14 +56,12 @@ function Home() {
           </Header>
 
           <Content style={contentStyle}>
-            <Project
-              name="42sh"
-              image="../42SH.png"
-            >
-              Shell command interpreter and executor based on POSIX standard in C
+            <Project name="42sh" image="../42SH.png">
+              Shell command interpreter and executor based on POSIX standard in
+              C
             </Project>
-            <Project name="Tiger" image='../TIGER.webp'>
-            Compiler for the Tiger language in C++
+            <Project name="Tiger" image="../TIGER.webp">
+              Compiler for the Tiger language in C++
             </Project>
           </Content>
           <Footer style={footerStyle}>Footer</Footer>

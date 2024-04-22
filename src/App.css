@@ -1,0 +1,19 @@
+.titillium-web-black {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.title {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  height: 100dvh;
+  font-size: 5rem;
+  background: #9fa4a9;
+}
+
+#root {
+  cursor: url('../otter.svg'), auto;
+}
