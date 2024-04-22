@@ -5,7 +5,7 @@ const { Header, Footer, Sider, Content } = Layout;
 const footerStyle = {
   textAlign: 'center' as const,
   color: '#fff',
-  backgroundColor: '#4096ff',
+  backgroundColor: '#194ef3',
 };
 
 const layoutStyle = {
@@ -16,12 +16,12 @@ const layoutStyle = {
 
 const sliderStyle = {
   lineHeight: '200%',
-  color: '#fff',
+  color: '#f31d19',
   backgroundColor: '#264653',
 };
 
 const headerStyle = {
-  backgroundColor: '#BD4089',
+  backgroundColor: '#33a5ff',
   textAlign: 'center' as const,
   align: 'center',
   height: '10%',
@@ -34,7 +34,7 @@ const flexStyle = {
 };
 
 const contentStyle = {
-  backgroundColor: '#CFD2B2',
+  backgroundColor: '#c5faff',
 };
 
 function Home() {
