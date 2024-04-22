@@ -10,8 +10,8 @@ export default function App() {
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="test" element={<Test />} />
+        <Route path="/" element={<Test />} />
+        <Route path="test" element={<Home />} />
         <Route path="parallax" element={<Parallax />} />
         {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit

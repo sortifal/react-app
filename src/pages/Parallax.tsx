@@ -11,10 +11,11 @@ const Parallax = () => {
     let value = window.scrollY;
 
     title.style.marginTop = value * 1.1 + 'px';
-    leaf1.style.marginLeft = -value + 'px';
+
     leaf2.style.marginLeft = value + 'px';
     bush2.style.marginBottom = -value + 'px';
-    mount1.style.marginBottom = -value * 1.1 + 'px';
+    leaf1.style.marginLeft = -value + 'px';
+    mount1.style.marginBottom = -value * 0.6 + 'px';
     mount2.style.marginBottom = -value * 1.2 + 'px';
   });
 
