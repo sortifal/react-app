@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Col, Row, Image } from 'antd';
 interface Props {
   name: string;

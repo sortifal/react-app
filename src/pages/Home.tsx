@@ -3,7 +3,7 @@ import Project from '../components/Project';
 const { Header, Footer, Sider, Content } = Layout;
 
 const footerStyle = {
-  textAlign: 'center',
+  textAlign: 'center' as const,
   color: '#fff',
   backgroundColor: '#4096ff',
 };
@@ -22,13 +22,13 @@ const sliderStyle = {
 
 const headerStyle = {
   backgroundColor: '#BD4089',
-  textAlign: 'center',
+  textAlign: 'center' as const,
   align: 'center',
   height: '10%',
 };
 
 const flexStyle = {
-  textAlign: 'center',
+  textAlign: 'center' as const,
   align: 'center',
   height: '100%',
 };

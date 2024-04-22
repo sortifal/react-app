@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Parallax = () => {
   const title = document.querySelector('.titlepar') as HTMLElement;
 

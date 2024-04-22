@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react';
-
 import Typewriter2 from '../components/TypeWriter2';
-import Typewriter from '../components/TypeWriter';
+
 function Test() {
   return (
     <>
